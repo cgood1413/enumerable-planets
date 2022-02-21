@@ -9,6 +9,24 @@
 </head>
 <body>
 <h1>Pick a planet:</h1>
+<!--<ul th:each="planet : ${planets}">-->
+<!--    <li th:text="${planet.planetName}">Planet</li>-->
+<!--</ul>-->
+<table class="table table-striped col-xs-10">
+    <tr>
+        <th>Planet</th>
+        <th>Length of Year(in Earth days)</th>
+        <th>Equatorial Radius (km)</th>
+    </tr>
+    <th:block th:each="planet : ${planets}">
+        <tr>
+            <td th:text="${planet.planetName}">Name</td>
+            <td th:text="${planet.yearLength}">Year length</td>
+            <td th:text="${planet.radius}">Radius</td>
+        </tr>
+    </th:block>
+
+</table>
 
 </body>
 </html>
